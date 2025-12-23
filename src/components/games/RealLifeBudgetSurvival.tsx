@@ -144,13 +144,13 @@ export function RealLifeBudgetSurvival({ onComplete }: { onComplete: (score: num
   const allDecided = fixedExpenses.every((e) => gameState.decisions[`${gameState.day}-${e.id}`]);
 
   return (
-    <div className="w-full h-full flex flex-col bg-gradient-to-b from-primary/5 via-accent/5 to-background px-6 md:px-8 py-8 gap-8 overflow-auto">
+    <div className="w-full flex flex-col bg-gradient-to-b from-primary/5 via-accent/5 to-background px-4 sm:px-6 lg:px-8 py-6 sm:py-8 gap-6 sm:gap-8 overflow-y-auto">
       {/* Header */}
-      <div className="max-w-4xl mx-auto w-full pt-2">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-3xl font-bold text-foreground">🏡 Real Life Budget Survival</h2>
-          <div className="text-right">
-            <div className="text-sm font-medium text-muted-foreground">Day {gameState.day}/30</div>
+      <div className="max-w-5xl mx-auto w-full">
+        <div className="flex items-end justify-between gap-4 mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground leading-tight">🏡 Real Life Budget Survival</h2>
+          <div className="text-right flex-shrink-0">
+            <div className="text-xs sm:text-sm font-medium text-muted-foreground whitespace-nowrap">Day {gameState.day}/30</div>
           </div>
         </div>
 
@@ -164,20 +164,27 @@ export function RealLifeBudgetSurvival({ onComplete }: { onComplete: (score: num
       </div>
 
       {/* Wallet Status */}
-      <div className="max-w-4xl mx-auto w-full grid grid-cols-3 gap-4">
-        <Card className="glass-card border border-accent/40 p-5 rounded-xl hover:border-accent/60 transition-colors flex flex-col">
+      <div className="max-w-5xl mx-auto w-full grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <Card className="glass-card border border-accent/40 p-4 sm:p-5 rounded-xl hover:border-accent/60 transition-colors flex flex-col justify-between">
           <p className="text-xs font-medium text-muted-foreground mb-3">Monthly Salary</p>
-          <p className="text-3xl font-bold text-accent text-right">₹{gameState.salary}</p>
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="text-2xl sm:text-3xl font-bold text-accent">₹</span>
+            <span className="text-2xl sm:text-3xl font-bold text-accent text-right flex-1">{gameState.salary}</span>
+          </div>
         </Card>
-        <Card className="glass-card border border-primary/40 p-5 rounded-xl hover:border-primary/60 transition-colors flex flex-col">
+        <Card className="glass-card border border-primary/40 p-4 sm:p-5 rounded-xl hover:border-primary/60 transition-colors flex flex-col justify-between">
           <p className="text-xs font-medium text-muted-foreground mb-3">Current Wallet</p>
-          <p className="text-3xl font-bold text-primary text-right">₹{gameState.wallet}</p>
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="text-2xl sm:text-3xl font-bold text-primary">₹</span>
+            <span className="text-2xl sm:text-3xl font-bold text-primary text-right flex-1">{gameState.wallet}</span>
+          </div>
         </Card>
-        <Card className="glass-card border border-secondary/40 p-5 rounded-xl hover:border-secondary/60 transition-colors flex flex-col">
+        <Card className="glass-card border border-secondary/40 p-4 sm:p-5 rounded-xl hover:border-secondary/60 transition-colors flex flex-col justify-between">
           <p className="text-xs font-medium text-muted-foreground mb-3">Potential Savings</p>
-          <p className={`text-3xl font-bold text-right ${gameState.wallet >= 500 ? "text-secondary" : "text-destructive"}`}>
-            ₹{Math.max(0, gameState.wallet - 1900)}
-          </p>
+          <div className="flex items-baseline justify-between gap-2">
+            <span className={`text-2xl sm:text-3xl font-bold ${gameState.wallet >= 500 ? "text-secondary" : "text-destructive"}`}>₹</span>
+            <span className={`text-2xl sm:text-3xl font-bold text-right flex-1 ${gameState.wallet >= 500 ? "text-secondary" : "text-destructive"}`}>{Math.max(0, gameState.wallet - 1900)}</span>
+          </div>
         </Card>
       </div>
 
