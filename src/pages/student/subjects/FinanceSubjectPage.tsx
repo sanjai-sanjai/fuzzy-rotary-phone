@@ -468,15 +468,53 @@ export default function FinanceSubjectPage() {
                 {selectedChapter.chapter === 2 && (
                   <>
                     <h2 className="font-heading text-2xl font-bold text-foreground mt-6 mb-3">Understanding Savings</h2>
+
+                    {/* Visual: Savings Journey */}
+                    <div className="bg-secondary/10 rounded-xl p-6 my-6 border border-secondary/20">
+                      <div className="flex items-center justify-between gap-3 mb-4">
+                        <div className="text-center flex-1">
+                          <div className="text-4xl mb-2">📉</div>
+                          <p className="text-xs font-semibold text-foreground">No Savings<br/>= Stress</p>
+                        </div>
+                        <div className="text-2xl text-secondary">→</div>
+                        <div className="text-center flex-1">
+                          <div className="text-4xl mb-2">🏦</div>
+                          <p className="text-xs font-semibold text-foreground">Start<br/>Saving</p>
+                        </div>
+                        <div className="text-2xl text-secondary">→</div>
+                        <div className="text-center flex-1">
+                          <div className="text-4xl mb-2">📈</div>
+                          <p className="text-xs font-semibold text-foreground">Watch It<br/>Grow!</p>
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground text-center">Small savings today = Big dreams tomorrow</p>
+                    </div>
+
                     <p>Savings is the practice of setting aside money for future use instead of spending it immediately. It's one of the most important financial habits you can develop.</p>
 
                     <h3 className="font-heading text-lg font-semibold text-foreground mt-5 mb-2">Why Save?</h3>
-                    <ul className="space-y-2 ml-4">
-                      <li>• Build an emergency fund for unexpected expenses</li>
-                      <li>• Plan for future goals (education, travel, housing)</li>
-                      <li>• Create financial security and reduce stress</li>
-                      <li>• Earn interest on your savings</li>
-                    </ul>
+                    <div className="grid grid-cols-2 gap-3 my-4">
+                      <div className="bg-primary/10 rounded-lg p-4 border border-primary/20">
+                        <div className="text-2xl mb-2">🆘</div>
+                        <p className="text-sm font-semibold">Emergency Fund</p>
+                        <p className="text-xs text-muted-foreground mt-1">Handle unexpected costs</p>
+                      </div>
+                      <div className="bg-accent/10 rounded-lg p-4 border border-accent/20">
+                        <div className="text-2xl mb-2">🎯</div>
+                        <p className="text-sm font-semibold">Future Goals</p>
+                        <p className="text-xs text-muted-foreground mt-1">Education, travel, housing</p>
+                      </div>
+                      <div className="bg-secondary/10 rounded-lg p-4 border border-secondary/20">
+                        <div className="text-2xl mb-2">😌</div>
+                        <p className="text-sm font-semibold">Peace of Mind</p>
+                        <p className="text-xs text-muted-foreground mt-1">Financial security & stress relief</p>
+                      </div>
+                      <div className="bg-secondary/10 rounded-lg p-4 border border-secondary/20">
+                        <div className="text-2xl mb-2">💸</div>
+                        <p className="text-sm font-semibold">Earn Interest</p>
+                        <p className="text-xs text-muted-foreground mt-1">Money that grows itself</p>
+                      </div>
+                    </div>
 
                     <h3 className="font-heading text-lg font-semibold text-foreground mt-5 mb-2">Saving Strategies:</h3>
                     <ul className="space-y-2 ml-4">
@@ -487,7 +525,17 @@ export default function FinanceSubjectPage() {
                     </ul>
 
                     <h3 className="font-heading text-lg font-semibold text-foreground mt-5 mb-2">Interest & Compound Growth:</h3>
-                    <p>When you keep money in a bank account, the bank pays you interest. Compound interest means you earn interest on your interest, which grows your savings exponentially over time.</p>
+                    <div className="bg-accent/10 rounded-lg p-4 my-4 border border-accent/20">
+                      <p className="text-sm mb-3">💡 <strong>The Magic of Compound Interest:</strong></p>
+                      <p className="text-sm text-foreground/80">When you keep ₹1000 in a bank at 5% interest per year:</p>
+                      <ul className="space-y-2 ml-4 mt-3 text-sm text-foreground/80">
+                        <li>Year 1: ₹1,050 (+₹50)</li>
+                        <li>Year 2: ₹1,102.50 (+₹52.50)</li>
+                        <li>Year 5: ₹1,276.28</li>
+                        <li>Year 10: ₹1,628.89</li>
+                      </ul>
+                    </div>
+                    <p>You earn interest on your interest, which grows your savings exponentially over time!</p>
                   </>
                 )}
 
