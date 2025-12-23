@@ -151,6 +151,50 @@ export default function TasksPage() {
     filterByCategory(category);
   };
 
+  // Get filtered tasks based on both status and category
+  const getFilteredTasksByStatus = () => {
+    let tasks: typeof userTasks = [];
+
+    switch (selectedStatusFilter) {
+      case "completed":
+        tasks = completedTasks;
+        break;
+      case "active":
+        tasks = inProgressTasks;
+        break;
+      case "available":
+        tasks = availableTasks;
+        break;
+      case "all":
+      default:
+        tasks = [...inProgressTasks, ...availableTasks, ...completedTasks];
+    }
+
+    // Further filter by category if needed
+    if (activeFilter !== "all") {
+      tasks = tasks.filter((userTask) => {
+        const taskDef = allTasks.find((t) => t.id === userTask.taskId);
+        return taskDef?.category === activeFilter;
+      });
+    }
+
+    return tasks;
+  };
+
+  const displayedTasks = getFilteredTasksByStatus();
+  const getStatusLabel = () => {
+    switch (selectedStatusFilter) {
+      case "completed":
+        return "Completed Tasks";
+      case "active":
+        return "Active Tasks";
+      case "available":
+        return "Available Tasks";
+      default:
+        return "All Tasks";
+    }
+  };
+
   const handleStartTask = async () => {
     if (!selectedTask) return;
     try {
