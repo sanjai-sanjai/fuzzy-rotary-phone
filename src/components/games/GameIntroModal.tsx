@@ -29,7 +29,7 @@ export function GameIntroModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onGoBack()}>
-      <DialogContent className="glass-card border-accent/30 max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="glass-card border-accent/30 max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl mx-4 p-8 shadow-2xl border-2">
         <DialogTitle className="sr-only">{config.conceptName}</DialogTitle>
         <DialogHeader className="text-center space-y-4 pb-4">
           {GameIcon && (
