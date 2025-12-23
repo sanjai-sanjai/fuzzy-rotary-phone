@@ -84,6 +84,22 @@ export function GameContainer({
     };
   }, []);
 
+  // Check if fullscreen is available on mount
+  useEffect(() => {
+    const element = containerRef.current?.querySelector("[data-game-canvas]") as Element;
+    const hasFullscreenSupport =
+      element && (
+        (element as any).requestFullscreen ||
+        (element as any).webkitRequestFullscreen ||
+        (element as any).mozRequestFullScreen ||
+        (element as any).msRequestFullscreen
+      );
+
+    if (!hasFullscreenSupport) {
+      setFullscreenUnavailable(true);
+    }
+  }, []);
+
   // Cleanup on unmount
   useEffect(() => {
     return () => {
