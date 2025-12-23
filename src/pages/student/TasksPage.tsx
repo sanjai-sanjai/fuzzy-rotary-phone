@@ -135,6 +135,7 @@ export default function TasksPage() {
   const [showProofModal, setShowProofModal] = useState(false);
   const [showTaskDetail, setShowTaskDetail] = useState(false);
   const [activeFilter, setActiveFilter] = useState<TaskCategory | "all">("all");
+  const [selectedStatusFilter, setSelectedStatusFilter] = useState<"all" | "completed" | "active" | "available">("all");
 
   // =========================================================================
   // HANDLERS
