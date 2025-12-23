@@ -265,11 +265,11 @@ export function RealLifeBudgetSurvival({ onComplete }: { onComplete: (score: num
 
       {/* End Day Button */}
       {allDecided && (
-        <div className="max-w-4xl mx-auto w-full">
+        <div className="max-w-5xl mx-auto w-full">
           <Button
             onClick={handleEndDay}
             size="lg"
-            className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 py-6 text-base font-semibold rounded-xl"
+            className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 py-5 sm:py-6 text-sm sm:text-base font-semibold rounded-xl"
           >
             {gameState.day === 30 ? "See Results" : "End Day & Continue →"}
           </Button>
@@ -278,15 +278,15 @@ export function RealLifeBudgetSurvival({ onComplete }: { onComplete: (score: num
 
       {/* Win/Loss State */}
       {gameState.status === "won" && (
-        <Card className="max-w-4xl mx-auto w-full glass-card border border-secondary/40 bg-secondary/10 p-8 rounded-2xl">
-          <div className="flex items-start gap-4">
-            <CheckCircle2 className="w-10 h-10 text-secondary mt-1 flex-shrink-0" />
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold text-foreground mb-3">🎉 You Survived!</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+        <Card className="max-w-5xl mx-auto w-full glass-card border border-secondary/40 bg-secondary/10 p-6 sm:p-8 rounded-2xl">
+          <div className="flex items-start gap-3 sm:gap-4">
+            <CheckCircle2 className="w-8 sm:w-10 h-8 sm:h-10 text-secondary mt-1 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2 sm:mb-3">🎉 You Survived!</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed break-words">
                 You managed your budget wisely and ended with ₹{gameState.wallet} in savings!
               </p>
-              <Button onClick={() => onComplete(100)} className="w-full bg-secondary hover:bg-secondary/90 py-6 text-base font-semibold rounded-xl">
+              <Button onClick={() => onComplete(100)} className="w-full bg-secondary hover:bg-secondary/90 py-4 sm:py-6 text-sm sm:text-base font-semibold rounded-xl">
                 Finish & Celebrate
               </Button>
             </div>
@@ -295,15 +295,15 @@ export function RealLifeBudgetSurvival({ onComplete }: { onComplete: (score: num
       )}
 
       {gameState.status === "lost" && (
-        <Card className="max-w-4xl mx-auto w-full glass-card border border-destructive/40 bg-destructive/10 p-8 rounded-2xl">
-          <div className="flex items-start gap-4">
-            <AlertCircle className="w-10 h-10 text-destructive mt-1 flex-shrink-0" />
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold text-foreground mb-3">💔 Better Luck Next Time</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+        <Card className="max-w-5xl mx-auto w-full glass-card border border-destructive/40 bg-destructive/10 p-6 sm:p-8 rounded-2xl">
+          <div className="flex items-start gap-3 sm:gap-4">
+            <AlertCircle className="w-8 sm:w-10 h-8 sm:h-10 text-destructive mt-1 flex-shrink-0" />
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2 sm:mb-3">💔 Better Luck Next Time</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed break-words">
                 You ended with ₹{gameState.wallet}. To win, you need ₹500 saved after paying essentials. Try again!
               </p>
-              <Button onClick={() => window.location.reload()} className="w-full bg-destructive/20 hover:bg-destructive/30 text-destructive py-6 text-base font-semibold rounded-xl border border-destructive/50">
+              <Button onClick={() => window.location.reload()} className="w-full bg-destructive/20 hover:bg-destructive/30 text-destructive py-4 sm:py-6 text-sm sm:text-base font-semibold rounded-xl border border-destructive/50">
                 Retry
               </Button>
             </div>
