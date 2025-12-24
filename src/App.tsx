@@ -63,9 +63,9 @@ const EquationBuilder = lazy(() => import("./pages/student/games/EquationBuilder
 const BiologyExplorer = lazy(() => import("./pages/student/games/BiologyExplorer"));
 const FoodChainHunter = lazy(() => import("./pages/student/games/FoodChainHunter"));
 const SproutHelp = lazy(() => import("./pages/student/games/SproutHelp"));
-const IdeaToIncome = lazy(() => import("./components/games/IdeaToIncome").then(m => ({ default: m.IdeaToIncome })));
-const StartupSurvival = lazy(() => import("./components/games/StartupSurvival").then(m => ({ default: m.StartupSurvival })));
-const CustomerFirst = lazy(() => import("./components/games/CustomerFirst").then(m => ({ default: m.CustomerFirst })));
+const IdeaToIncomePage = lazy(() => import("./pages/student/games/IdeaToIncomePage"));
+const StartupSurvivalPage = lazy(() => import("./pages/student/games/StartupSurvivalPage"));
+const CustomerFirstPage = lazy(() => import("./pages/student/games/CustomerFirstPage"));
 const CycleTap = lazy(() => import("./pages/student/games/CycleTap"));
 const BuildACell = lazy(() => import("./pages/student/games/BuildACell"));
 const GoodGermVsBadGerm = lazy(() => import("./pages/student/games/GoodGermVsBadGerm"));
