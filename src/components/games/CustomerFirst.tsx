@@ -208,7 +208,16 @@ export function CustomerFirst({ onComplete, onBack }: { onComplete: (score: numb
   if (gameState.phase === "splash") {
     return (
       <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-        <div className="bg-gradient-to-br from-secondary/20 to-card rounded-3xl border border-secondary/50 p-8 max-w-md w-full space-y-6">
+        <div className="bg-gradient-to-br from-secondary/20 to-card rounded-3xl border border-secondary/50 p-8 max-w-md w-full space-y-6 relative">
+          {onBack && (
+            <button
+              onClick={handleBackPress}
+              className="absolute top-4 left-4 p-2 hover:bg-card/50 rounded-lg transition-all text-muted-foreground hover:text-foreground"
+              title="Back to Entrepreneurship"
+            >
+              <ArrowLeft size={24} />
+            </button>
+          )}
           <div className="text-center">
             <div className="text-6xl mb-4">👥</div>
             <h2 className="font-heading text-3xl font-bold text-foreground mb-2">Customer First</h2>
