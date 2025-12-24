@@ -88,9 +88,6 @@ export default function RewardsPage() {
             width: 249px !important;
             height: 327px !important;
           }
-          .edu-coin-header img {
-            width: 20px !important;
-          }
           .edu-coin-earned {
             width: 35px !important;
           }
